@@ -14,7 +14,7 @@ router.post('/', (req, res, next) => {
         email: req.body.email,
         content: req.body.content
     };
-  
+    console.log("asdasdsad", mailInfor)
     try {
             // Create a transporter object using SMTP
         let transporter = nodemailer.createTransport({
@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
             to: mailInfor.email, // List of recipients
             subject: 'Test Email', // Subject line
             text: '', // Plain text body
-            html: atob(mailInfor.content)
+            html: JSON.parse(mailInfor.content)
         };
   
         // Send email
