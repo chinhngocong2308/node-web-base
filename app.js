@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
 const productRoutes = require("./api/routes/products");
+const mailerRoutes = require("./api/routes/mailer");
+
 const orderRoutes = require("./api/routes/orders");
 
 app.use(morgan("dev"));
@@ -25,6 +27,8 @@ app.use((req, res, next) => {
 
 // Routes which should handle requests
 app.use("/products", productRoutes);
+app.use("/mail", mailerRoutes);
+
 app.use("/orders", orderRoutes);
 
 app.use((req, res, next) => {
