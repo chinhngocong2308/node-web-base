@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
             to: mailInfor.email, // List of recipients
             subject: 'Test Email', // Subject line
             text: '', // Plain text body
-            html: mailInfor.content
+            html: atob(mailInfor.content)
         };
   
         // Send email
