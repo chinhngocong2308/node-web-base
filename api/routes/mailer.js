@@ -20,8 +20,8 @@ router.post('/', (req, res, next) => {
         let transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'chinhngocong2308@gmail.com', // Your email address
-                pass: 'lfjt syvz gsbk yupw' // Your password
+                user: 'marketing.basevn@gmail.com', // Your email address
+                pass: 'updj gedq pqgn fmit' // Your password
             }
         });
   
@@ -29,7 +29,7 @@ router.post('/', (req, res, next) => {
         let mailOptions = {
             from: 'updj gedq pqgn fmit', // Sender address
             to: mailInfor.email, // List of recipients
-            subject: 'Test Email', // Subject line
+            subject: mailInfor.subject, // Subject line
             text: '', // Plain text body
             html: JSON.parse(mailInfor.content)
         };
@@ -48,9 +48,7 @@ router.post('/', (req, res, next) => {
             createdProduct: mailInfor
         });
     } catch (error) {
-        res.status(500).json({
-            message: error,
-        });
+        console.log("sadsadasd", error)
     }
 
 });
