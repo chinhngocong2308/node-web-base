@@ -48,7 +48,7 @@ router.post('/', (req, res, next) => {
             createdProduct: mailInfor
         });
     } catch (error) {
-        console.log("sadsadasd", error)
+        console.log("Error mail", error)
     }
 
 });
